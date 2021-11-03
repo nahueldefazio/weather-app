@@ -1,0 +1,5 @@
+<p *ngFor="let city of city_details">
+  <span>{{city | json}}</span>
+  <button mat-button color="primary" (click)="getWoeid(city.woeid)">Select City</button>
+</p>
+<app-info-city [cityWeather]="informacion_ciudad" ></app-info-city>

@@ -1,0 +1,11 @@
+<form class="example-form" (submit)="$event.preventDefault()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>City</mat-label>
+    <input type="text" matInput [formControl]="city" placeholder="Ex. Madrid" autocomplete="off">
+    <mat-error *ngIf="city.hasError('required')">
+      City is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="getCity()" class="m-2">Search</button>
+</form>
+<app-results-city [city_details]="cityArr"></app-results-city>

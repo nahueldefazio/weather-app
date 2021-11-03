@@ -1,0 +1,13 @@
+<h1 class="text-center">{{cityWeather.title}} {{cityWeather.location_type}}</h1>
+<div class="d-flex flex-wrap">
+  <div *ngFor="let clima of cityWeather.consolidated_weather"  class="d-flex flex-column card m-3">
+    <p>Fecha : {{clima.applicable_date |date}}</p>
+    <img src="https://www.metaweather.com//static/img/weather/{{clima.weather_state_abbr}}.svg" style="height: 100px; width: 100px"/>
+    <span>MIN Temp: {{clima.min_temp |number: '1.0-0'}}°</span>
+    <span>MAX Temp: {{clima.max_temp |number: '1.0-0'}}°</span>
+    <span>Humedad: {{clima.humidity}}</span>
+
+  </div>
+</div>
+
+
